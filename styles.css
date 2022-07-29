@@ -7,6 +7,7 @@ body{
     font-family: 'Barlow Semi Condensed', sans-serif;
     line-height: 1.5;
     font-size: 13px;
+    
 }
 .testimonials{
     max-width: 1440px;
@@ -90,10 +91,13 @@ body{
 .footer a { 
     color: hsl(228, 45%, 44%); }
 
-@media(max-width:500px){
+@media(max-width:768px){
     .testimonials{
         grid-template-columns: 1fr;
-        width: 100%;
+        width: 80%;
+        align-items: center;
+        justify-content: center;
+        position: relative;
     }
     .card:nth-child(1){
         grid-column: 1;
