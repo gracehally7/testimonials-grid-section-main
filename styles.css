@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding:0;
+    box-sizing: border-box;
 }
 body{
     background: #edf2fb;
@@ -10,12 +11,15 @@ body{
     
 }
 .testimonials{
-    max-width: 1440px;
+    width: 75%;
     margin: 100px auto;
-    padding: 28px;
+    padding: 20px;
     display: grid; 
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+    grid-template-areas: "a a b e" 
+    "c d d e";
+    gap: 25px;
+    /* grid-template-columns: repeat(4, 1fr); */
+    
 }
 .card{
     background-color: #fff;
@@ -30,7 +34,7 @@ body{
     margin-bottom: 10px;
 }
 .card__header h3{
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
 }
 .card__header p{
@@ -40,7 +44,7 @@ body{
 .card__img{
     width: 48px;
     height: 48px;
-    border-radius: 100%;
+    border-radius: 50%;
     border: #4773c4 2px solid;
     margin-right: 10px;
 
@@ -57,49 +61,58 @@ body{
     line-height: 1.4;
     opacity: 70%;
 }
-.card--bg-purple{
+.a{
     color: #fff;
-    background:hsl(263, 60%, 38%);
-    background-image:url(../testimonials-grid-section-main/images/bg-pattern-quotation.svg);
+    background:hsl(263, 55%, 52%);
+    background-image:url(./images/bg-pattern-quotation.svg);
     background-repeat: no-repeat;;
     background-position:top 10px right 100px;
+    grid-area: a;
     
 }
-.card--bg-grey{
+.b{
     background-color: hsl(217, 19%, 35%);
     color: white;
+    grid-area: b;
 }
-.card--bg-black{
+.c{
+    grid-area: c;
+}
+.e{
+    grid-area: e;
+}
+.d{
     background-color: hsl(219, 29%, 14%);
     color: white;
+    grid-area: d;
 }
-.card:nth-child(1){
+/* .card:nth-child(1){
     grid-column: 1/3;
 }
 .card:nth-child(4){
     grid-column: 2/4;
-    grid-row:2/3;
+    grid-row:2;
 }
 .card:nth-child(5){
     grid-column: 4;
     grid-row:1/3;
-}
+} */
 .footer { 
     font-size: 11px; 
     text-align: center; 
 }
-.footer a { 
-    color: hsl(228, 45%, 44%); }
 
-@media(max-width:768px){
+
+@media(max-width:768px){  
+     html{
+        font-size: 55%;
+     }
     .testimonials{
-        grid-template-columns: 1fr;
-        width: 80%;
-        align-items: center;
-        justify-content: center;
-        position: relative;
+        display:flex;
+        flex-direction: column;
+        width: 100%;
     }
-    .card:nth-child(1){
+    /* .card:nth-child(1){
         grid-column: 1;
     }
     .card:nth-child(4){
@@ -109,6 +122,6 @@ body{
     .card:nth-child(5){
         grid-column: 1;
         grid-row:5;
-    }
+    } */
 }
 
